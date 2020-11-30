@@ -38,6 +38,11 @@ public class PrivateProperty extends Property
     * used with the .equals() method to evaluate whether or not the hashcodes of
     * two Strings/Objects/ints are the exact same*/
 
+    public int getNumBeds()
+    {
+        return numBeds;
+    }
+
     public double calculateTax(double area, int numBeds)
     {
         double basicCharge = 15.00;
