@@ -101,19 +101,26 @@ public class Property
     @Override
     public int hashCode()
     {
-        return super.hashCode();
+        return this.hashCode();
     }
 
     @Override
     public boolean equals(Object obj)
     {
-        return super.equals(obj);
+        return this.equals(obj);
     }
 
     @Override
     public String toString()
     {
-        return super.toString();
+        return "Property{" +
+                "PropertyID=" + propertyID +
+                ", ownerName='" + owner + '\'' +
+                ", postcode='" + postcode + '\'' +
+                ", sellingPrice=" + sellingPrice +
+                ", area=" + area +
+                ", facilities=" + facilities +
+                '}';
     }
 
     public double calculateTax(double area)
