@@ -10,14 +10,27 @@ public class Property
     private String postcode;
     private double sellingPrice;
     private double area;
+    private ArrayList facilities;
 
-    public Property(int propertyID, String owner, String postcode, double sellingPrice, double area)
+
+    public Property(int propertyID, String owner, String postcode, double area, ArrayList facilities)
+    {
+        this.propertyID = propertyID;
+        this.owner = owner;
+        this.postcode = postcode;
+        this.sellingPrice = 150000;
+        this.area = area;
+        this.facilities = facilities;
+    }
+
+    public Property(int propertyID, String owner, String postcode, double sellingPrice, double area, ArrayList facilities)
     {
         this.propertyID = propertyID;
         this.owner = owner;
         this.postcode = postcode;
         this.sellingPrice = sellingPrice;
         this.area = area;
+        this.facilities = facilities;
     }
 
     public int getPropertyID()
@@ -65,9 +78,52 @@ public class Property
         return area;
     }
 
+    public ArrayList getFacilities()
+    {
+        return facilities;
+    }
+
     public void setArea(double area)
     {
         this.area = area;
     }
 
+    public void addFacility(String facility)
+    {
+        facilities.add(facility);
+    }
+
+    public void removeFacility(String facility)
+    {
+        facilities.remove(facility);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString()
+    {
+        return super.toString();
+    }
+
+    public double calculateTax(double area)
+    {
+        double basicCharge = 15.00;
+
+        double areaCharge = this.area * 2.2;
+
+        basicCharge += areaCharge;
+
+        return basicCharge;
+    }
 }
