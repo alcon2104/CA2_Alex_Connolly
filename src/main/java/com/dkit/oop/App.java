@@ -21,15 +21,17 @@ public class App
         System.out.println("Q1 - some simple tests");
 
         Property p1 = new Property(1, "Mary Smith", "A91AB12", 255000, new ArrayList());
+        //also part of Q1 part 3
         p1.addFacility("mains");
         p1.addFacility("electricity");
-        //System.out.println("Property p1 details:");
-        //System.out.println(p1.getPropertyID() + " : " + p1.getOwner() + " : " + p1.getPostcode() + " : " + p1.getSellingPrice() + " : " + p1.getArea() + " : " + p1.getFacilities());
-        p1.removeFacility("mains");
-        //System.out.println("Property p1 details:");
-        //System.out.println(p1.getPropertyID() + " : " + p1.getOwner() + " : " + p1.getPostcode() + " : " + p1.getSellingPrice() + " : " + p1.getArea() + " : " + p1.getFacilities());
 
-        //System.out.println("Property #1 tax = " + p1.calculateTax(p1.getArea()));
+        System.out.println("Property p1 details:");
+        System.out.println(p1.getPropertyID() + " : " + p1.getOwner() + " : " + p1.getPostcode() + " : " + p1.getSellingPrice() + " : " + p1.getArea() + " : " + p1.getFacilities());
+        p1.removeFacility("mains");
+        System.out.println("Property p1 details:");
+        System.out.println(p1.getPropertyID() + " : " + p1.getOwner() + " : " + p1.getPostcode() + " : " + p1.getSellingPrice() + " : " + p1.getArea() + " : " + p1.getFacilities());
+
+        System.out.println("Property #1 tax = " + p1.calculateTax(p1.getArea()));
 
         System.out.println("Q2 - tests");
 
@@ -45,17 +47,19 @@ public class App
         properties.add(p2);
         properties.add(p3);
 
+        /*Q2 part 1*/
         displayProperties(properties);
         ArrayList<Property> propertiesAbovePrice;
+        /*Q2 part 2*/
         propertiesAbovePrice = getPropertiesPriceAbove(properties, 155000);
         for (int i = 0; i < propertiesAbovePrice.size(); i++) {
-            //System.out.println(propertiesAbovePrice.get(i).toString());
+            System.out.println(propertiesAbovePrice.get(i).toString());
         }
 
 
         System.out.println("Q3 - tests");
         PrivateProperty pp1 = new PrivateProperty(4, "Harry Totter", "A74UUT2", 110000, 120000, new ArrayList(), 1, "Apartment");
-        //System.out.println("Private Property #1: numBeds = " + pp1.getNumBeds() + ", tax due = " + pp1.calculateTax(p1.getArea(), pp1.getNumBeds()));
+        System.out.println("Private Property #1: numBeds = " + pp1.getNumBeds() + ", tax due = " + pp1.calculateTax(p1.getArea(), pp1.getNumBeds()));
 
 
         System.out.println("Q4 - tests");
@@ -67,12 +71,14 @@ public class App
         pp3.addFacility("Private access");
         pp3.addFacility("electricity");
 
+        /*Q4 part 1*/
         properties.add(pp1);
         properties.add(pp2);
         properties.add(pp3);
         displayProperties(properties);
 
 
+        /*Q4 part 2*/
         for (int i = 0; i < properties.size(); i++)
         {
             System.out.println("Private Property #" + properties.get(i).getPropertyID() + ": Property ID = "
@@ -81,6 +87,7 @@ public class App
 
     }
 
+    /*Q2 part 1*/
     private void displayProperties(ArrayList<Property> properties)
     {
         for(int i = 0; i < properties.size(); i++)
@@ -89,6 +96,7 @@ public class App
         }
     }
 
+    /*Q2 part 2*/
     private ArrayList getPropertiesPriceAbove(ArrayList<Property> properties, int boundaryPrice)
     {
         ArrayList<Property> validProps = new ArrayList<>();

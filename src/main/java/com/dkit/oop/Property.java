@@ -10,6 +10,7 @@ public class Property
     private String postcode;
     private double sellingPrice;
     private double area;
+    /*Q1 part 2*/
     private ArrayList facilities;
 
 
@@ -22,7 +23,7 @@ public class Property
         this.area = area;
         this.facilities = facilities;
     }
-
+    /*Q1 part 1*/
     public Property(int propertyID, String owner, String postcode, double sellingPrice, double area, ArrayList facilities)
     {
         this.propertyID = propertyID;
@@ -88,16 +89,19 @@ public class Property
         this.area = area;
     }
 
+    /*Q1 part 3*/
     public void addFacility(String facility)
     {
         facilities.add(facility);
     }
 
+    /*Q1 part 4*/
     public void removeFacility(String facility)
     {
         facilities.remove(facility);
     }
 
+    /*Q1 part 5*/
     @Override
     public int hashCode()
     {
@@ -123,6 +127,7 @@ public class Property
                 '}';
     }
 
+    /*Q1 part 6*/
     public double calculateTax(double area)
     {
         double basicCharge = 15.00;
